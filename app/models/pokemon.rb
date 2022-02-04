@@ -16,10 +16,8 @@ class Pokemon < ApplicationRecord
 
   validates_presence_of :name, on: :create, message: "Name can't be blank"
   validates_uniqueness_of :name, on: :create, message: "Pokemon must be unique"
-    
-  end
 
-  def self.create_with(:params, :stats, :types, :abilities)
+  def self.create_with(params, stats, types, abilities)
     pokemon = Pokemon.new_by params
 
     stats.each { |s| PokemonStat.set_to(pokemon, s) }
