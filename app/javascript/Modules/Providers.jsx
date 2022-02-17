@@ -1,10 +1,18 @@
 import React from 'react'
 
+import { AppProvider } from '../Context/AppContext'
+import { ThemeProvider } from '../Context/ThemeContext'
+import { UserProvider } from '../Context/UserContext'
+
 function Providers({children}) {
   return (
-    <div>
-      {children}
-    </div>
+    <AppProvider>
+      <ThemeProvider>
+        <UserProvider>
+          {children}
+        </UserProvider>
+      </ThemeProvider>
+    </AppProvider>
   )
 }
 

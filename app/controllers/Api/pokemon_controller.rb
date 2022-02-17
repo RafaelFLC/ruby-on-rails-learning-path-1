@@ -1,6 +1,7 @@
 module Api
   class PokemonController < ApiController
     before_action :is_valid_jwt
+    skip_before_action :is_valid_jwt, only: [:get_random]
     include PokeapiHelper
 
     # Create Pokemon if not exist with stats, types and abilities 

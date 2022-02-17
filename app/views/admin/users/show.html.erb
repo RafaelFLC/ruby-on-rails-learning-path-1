@@ -1,0 +1,10 @@
+<%= link_to '< back to list', admin_users_path %>
+
+<h1><%= @user.name + ' ' + @user.lastname.to_s %> </h1>
+
+<p> <b>Username :</b> <%= @user.username %> </p>
+<p> <b>Role :</b> <%= @user.role == 1 ? 'Admin' : 'Normal' %> </p>
+<p> <b>Total of Pokemons :</b> <%= @user.pokemons.length %> </p>
+<p> <b>Edited time :</b> <%= @user.updated_at %> </p>
+
+<%= link_to 'Edit', edit_admin_user_path(@user) %>  

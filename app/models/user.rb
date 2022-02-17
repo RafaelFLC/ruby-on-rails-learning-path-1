@@ -17,6 +17,12 @@ class User < ApplicationRecord
   has_many :user_pokemons
   has_many :pokemons, through: :user_pokemons
 
+  scope :sorted, lambda { order('name ASC') }
+
+  def role_type 
+    role == 1 ? 'Admin' : 'Normal'
+  end
+
   def self.new_by (params) 
     self.new(
       :name => params['name'], 

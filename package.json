@@ -25,8 +25,8 @@
     "build": "npm run build:css && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:css": "postcss app/javascript/css/tailwind.css -o app/javascript/css/main.css",
-    "watch:css": "postcss app/javascript/css/tailwind.css -o app/javascript/css/main.css"
+    "build:css": "postcss app/javascript/packs/css/tailwind.css -o app/javascript/packs/css/main.css",
+    "watch:css": "postcss app/javascript/packs/css/tailwind.css -o app/javascript/packs/css/main.css"
   },
   "version": "0.1.0",
   "devDependencies": {

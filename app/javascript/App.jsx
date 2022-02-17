@@ -4,7 +4,9 @@ import Router from './Modules/Router'
 
 function App() {
   return (
-    <h3>Hello from react</h3>
+    <Providers>
+      <Router />
+    </Providers>
   )
 l}
 

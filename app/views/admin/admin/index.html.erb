@@ -1,0 +1,41 @@
+<h1>Dashboard</h1>
+
+<style>
+  .container {
+    display: flex;
+    justify-content: space-around;
+
+  }
+
+  .card {
+    padding: 10px;
+    width: 200px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    box-shadow: #d3d3d370 3px 2px 10px 2px;
+  }
+
+  .text-red {
+    color: red;
+  }
+
+  .text-bold {
+    font-weight: bold;
+  }
+</style>
+
+
+<div class="container">
+  <% @totals.each do |total| %>
+    <%= link_to "admin/#{total[0]}", class:'card' do %>
+      <h3> <%=total[0].capitalize%> </h3>
+      <div class='text-red text-bold'>
+        <%=total[1]%>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<%%>

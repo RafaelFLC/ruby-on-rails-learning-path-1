@@ -1,0 +1,66 @@
+<style>
+  .table {
+    width: 80%;
+    margin: auto;
+  }
+  td, th {
+    padding: 0px 12px;
+  }
+
+  table tr th {
+    border-right: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 4px;
+  }
+
+  .right {
+    text-align: right;
+  }
+
+  a {
+    text-decoration: none;
+    border: 1px solid lightgray;
+    padding: 5px;
+    color: black;
+    height: 15px;
+  }
+
+  .view-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+</style>
+
+<h1> welcome to users </h1>
+
+
+<div class="view-head">
+  <h4>
+    <%= "Total of users : " + @users.length.to_s %>
+  </h4>
+  <%= link_to "New", new_admin_user_path %>
+</div>
+<br/>
+<table class="table">
+  <tr>
+    <th class="right">#</th>
+    <th>Full name</th>
+    <th>Username</th>
+    <th>Role</th>
+    <th>Actions</th>
+  <tr>
+  <% @users.each do |u| %>
+    <tr>
+      <td class="right"> <%= u[:id] %> </td>
+      <td> <%= u[:name] %> </td>
+      <td> <%= u[:username] %> </td>
+      <td> <%= u.role_type %> </td>
+      <td class="right">
+        <%= link_to "Show", admin_user_path(u[:id]) %>
+        <%= link_to "Edit", edit_admin_user_path(u[:id]) %>
+        <%= link_to "Delete", delete_admin_user_path(u[:id]) %>
+      </td>
+    </tr>
+  <% end %>
+</table>

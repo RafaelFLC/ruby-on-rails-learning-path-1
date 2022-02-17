@@ -1,0 +1,39 @@
+<%= link_to '< back to list', admin_users_path %>
+<div class="create-new">
+  
+  <h1>Edit User</h1>
+  
+  <%= form_for(@user, :url => "/admin/users/#{@user.id}") do |f| %>
+
+    <div>
+      <% @user.errors.full_messages.each do |error| %>
+        <%= error %>
+      <% end %>
+    </div>
+
+    <div class='input-group'>
+      <label>Name</label> <br/>
+      <%= f.text_field :name %>
+    </div>
+    <div class='input-group'>
+      <label>Lastname</label> <br/>
+      <%= f.text_field :lastname %>
+    </div>
+    <div class='input-group'>
+      <label>Password</label> <br/>
+      <%= f.text_field :password %>
+    </div>
+    <div class='input-group'>
+      <label>Password confirm</label> <br/>
+      <%= f.text_field :password_confirmation %>
+    </div>
+    <div class='input-group'>
+      <label>Role</label> <br/>
+      <%= f.text_field :role %>
+    </div>
+    <div class='input-group'>
+      <%= f.submit "Submit", disable_with: 'Submiting...' %>
+    </div>
+
+  <% end %>
+</div>
